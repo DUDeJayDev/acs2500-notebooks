@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "acs2500"
+version = "1.0.0"
+description = ""
+authors = ["Dj Isaac <demetrius.isaac@students.dominican.edu>"]
+license = "CC BY-SA 4.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.25.2"
+pandas = "^2.1.0"
+ipykernel = "^6.25.2"
+jupyter = "^1.0.0"
+seaborn = "^0.12.2"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
