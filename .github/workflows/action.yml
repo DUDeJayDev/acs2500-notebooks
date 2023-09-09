@@ -3,7 +3,7 @@ name: Run Notebooks and Recommit
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
     # :)
 
@@ -19,14 +19,14 @@ jobs:
       - name: Install poetry
         run: pipx install poetry
 
+      - name: Install dependencies
+        run: poetry install
+
       - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           cache: 'poetry'
-
-      - name: Install dependencies
-        run: poetry install
 
       - name: Find and execute Notebook files
         run: find -type f -name "*.ipynb" -not -path "*/.venv/*" -exec jupyter nbconvert --execute --to notebook --inplace {} \;
