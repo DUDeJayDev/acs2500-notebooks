@@ -29,7 +29,7 @@ jobs:
         run: poetry install
 
       - name: Find and execute Notebook files
-        run: find -type f -name "*.ipynb" -not -path "*/.venv/*" -exec jupyter nbconvert --execute --to notebook --inplace {} \;
+        run: find -type f -name "*.ipynb" -not -path "*/.venv/*" -exec poetry run jupyter nbconvert --execute --to notebook --inplace {} \;
 
       - name: Update graphs
         run: |
